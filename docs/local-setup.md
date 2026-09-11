@@ -6,7 +6,7 @@ This repository is the NestJS backend for the Vecteron internal website CMS.
 
 - Node.js 22 or newer
 - pnpm
-- Docker Desktop, or a local PostgreSQL database
+- Docker Desktop running, or a local PostgreSQL database
 
 ## Setup
 
@@ -33,6 +33,9 @@ This repository is the NestJS backend for the Vecteron internal website CMS.
    ```bash
    docker compose up -d db
    ```
+
+   If this fails with `failed to connect to the docker API`, open Docker Desktop and wait until it says the engine is running. Then run the command again.
+
 
 5. Generate the Prisma client:
 
@@ -65,7 +68,11 @@ git checkout develop
 git pull
 ```
 
-Then create or update your feature branch from the latest `main`.
+Then create or update your feature branch from the latest `develop`.
+
+If the API fails with `Environment variable not found: DATABASE_URL`, copy `.env.example` to `.env` and restart the API.
+
+If Docker says port `5432` is unavailable, pull the latest setup files. This project maps Docker Postgres to local port `5435` so it does not fight with another local database.
 
 ## Useful commands
 
