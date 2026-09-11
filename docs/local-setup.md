@@ -64,8 +64,8 @@ The API runs on `http://localhost:3001/api/v1` by default. Swagger is available 
 Before starting work each day, pull the latest changes from the shared branch:
 
 ```bash
-git checkout main
-git pull origin main
+git checkout develop
+git pull origin develop
 ```
 
 Then create or update your feature branch from the latest `main`.
