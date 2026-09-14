@@ -1,307 +1,224 @@
 # Vecteron Internal Website CMS - Backend Task Management
 
-# BACKLOG
+Use this file to track backend tasks for the Vecteron internal website CMS.
 
-## AUTHENTICATION & AUTHORIZATION
-
-### CMS-001 - Admin Authentication Module
-
-- [ ] Create User Prisma Model
-- [ ] Create Auth Module
-- [ ] Create Auth Controller
-- [ ] Create Auth Service
-- [ ] Implement Password Hashing
-- [ ] Implement JWT Authentication
-- [ ] Create Login Endpoint
-- [ ] Create Refresh Token Endpoint
-- [ ] Create Logout Endpoint
-- [ ] Swagger Documentation
-
-### CMS-002 - Role Management
-
-- [ ] Create Role Model
-- [ ] Create Role CRUD APIs
-- [ ] Assign Roles To Users
-- [ ] Update Roles
-- [ ] Delete Roles
-
-### CMS-003 - Permission Management
-
-- [ ] Create Permission Model
-- [ ] Create Permission CRUD APIs
-- [ ] Assign Permissions To Roles
-- [ ] Permission Guards
-- [ ] Route Protection
+Tasks are based on the current backend repo and the website page mockups. Move items from `Backlog` to `In Progress`, `Review`, and `Done` as the team works.
 
 ---
 
-## PAGES MANAGEMENT
+# Backlog
 
-### CMS-004 - Page Management API
+## Foundation Next Steps
 
-- [ ] Create Page Prisma Model
-- [ ] Create Page DTOs
-- [ ] Create Page Service
-- [ ] Create Page Controller
-- [ ] Create Create Page Endpoint
-- [ ] Create Update Page Endpoint
-- [ ] Create Delete Page Endpoint
-- [ ] Create Get Page Endpoint
-- [ ] Create Get All Pages Endpoint
+### CMS-002 - Shared API Helpers
 
-### CMS-005 - Page SEO Management
+- [ ] Create pagination DTO.
+- [ ] Create standard list response shape.
+- [ ] Create shared slug validation helper.
+- [ ] Add consistent error handling patterns.
 
-- [ ] SEO Title
-- [ ] SEO Description
-- [ ] Meta Keywords
-- [ ] OpenGraph Image
-- [ ] Page Slug Management
+## Authentication & Admin Access
 
----
+### CMS-003 - Admin Authentication
 
-## SECTION MANAGEMENT
+- [ ] Create user model.
+- [ ] Create `auth` module, controller, service, and DTO folder.
+- [ ] Implement password hashing.
+- [ ] Implement JWT login.
+- [ ] Add protected `GET /api/v1/admin/auth/session`.
+- [ ] Add logout strategy for frontend token clearing.
+- [ ] Add Swagger documentation.
 
-### CMS-006 - Section CRUD
+### CMS-004 - Roles & Permissions
 
-- [ ] Create Section Prisma Model
-- [ ] Create Section DTOs
-- [ ] Create Section Service
-- [ ] Create Section Controller
-- [ ] Create Create Section Endpoint
-- [ ] Create Update Section Endpoint
-- [ ] Create Delete Section Endpoint
-- [ ] Create Get Section Endpoint
-- [ ] Create Get Sections Endpoint
+- [ ] Create role and permission models.
+- [ ] Assign roles to users.
+- [ ] Add admin route guards.
+- [ ] Add permission checks for content management.
 
-### CMS-007 - Section Ordering
+## Page CMS
 
-- [ ] Create Reorder Section Endpoint
-- [ ] Persist Section Order
-- [ ] Update Section Positions
+### CMS-005 - Page Management API
 
-### CMS-008 - Section Type Registry
+- [ ] Create `pages` module, controller, service, and DTO folder.
+- [ ] Create page model with title, slug, page type, status, SEO fields, and timestamps.
+- [ ] Create page create, update, delete, detail, and list endpoints.
+- [ ] Support draft and published states.
 
-Supported Types:
+### CMS-006 - Page SEO Management
 
-- [ ] Hero
-- [ ] Services
-- [ ] Projects
-- [ ] Team
-- [ ] Statistics
-- [ ] CTA
-- [ ] Testimonials
-- [ ] FAQ
-- [ ] Gallery
-- [ ] Rich Text
+- [ ] Add SEO title.
+- [ ] Add SEO description.
+- [ ] Add meta keywords.
+- [ ] Add OpenGraph image.
+- [ ] Add canonical URL.
 
-### CMS-009 - Section Visibility
+## Section CMS
 
-- [ ] Hide Section
-- [ ] Show Section
-- [ ] Toggle Visibility Endpoint
+### CMS-007 - Section Management API
 
-### CMS-010 - Section Duplication
+- [ ] Create `sections` module, controller, service, and DTO folder.
+- [ ] Create section model connected to pages.
+- [ ] Add section create, update, delete, detail, list, and reorder endpoints.
+- [ ] Support hidden and visible states.
+- [ ] Store flexible section content as JSON.
 
-- [ ] Duplicate Section Endpoint
-- [ ] Copy Section Content
-- [ ] Copy Section Configuration
+### CMS-008 - Section Types From Mockups
 
----
+- [ ] Hero section.
+- [ ] Service grid section.
+- [ ] Sector cards section.
+- [ ] Impact metrics section.
+- [ ] Case study section.
+- [ ] Blog preview section.
+- [ ] Team or leadership section.
+- [ ] FAQ section.
+- [ ] CTA section.
+- [ ] Contact form section.
+- [ ] Footer content section.
 
-## MEDIA LIBRARY
+## Website Pages From Mockups
 
-### CMS-011 - Media Upload Service
+### CMS-009 - Homepage Content
 
-- [ ] Upload Endpoint
-- [ ] File Validation
-- [ ] Image Compression
-- [ ] File Storage Integration
+- [ ] Manage hero copy and hero media.
+- [ ] Manage solution/service cards.
+- [ ] Manage industry expertise cards.
+- [ ] Manage leadership or team highlights.
+- [ ] Manage success stories.
+- [ ] Manage latest insights.
+- [ ] Manage final CTA.
 
-### CMS-012 - Media Library Management
+### CMS-010 - About / Company Page Content
 
-- [ ] Get Media Endpoint
-- [ ] Delete Media Endpoint
-- [ ] Search Media
-- [ ] Filter Media
-- [ ] Pagination
+- [ ] Manage company overview.
+- [ ] Manage mission and vision content.
+- [ ] Manage executive leadership content.
+- [ ] Manage company values or capability sections.
+- [ ] Manage company timeline or capacity sections.
 
----
+### CMS-011 - Services / Solutions Page Content
 
-## PROJECTS MANAGEMENT
+- [ ] Manage service categories.
+- [ ] Manage service detail sections.
+- [ ] Manage cloud transformation content.
+- [ ] Manage cybersecurity content.
+- [ ] Manage infrastructure content.
+- [ ] Manage AI or data strategy content.
 
-### CMS-013 - Project Management
+### CMS-012 - Sector / Industry Pages
 
-- [ ] Create Project Model
-- [ ] Create Project DTOs
-- [ ] Create Project Service
-- [ ] Create Project Controller
-- [ ] Create Project Endpoint
-- [ ] Update Project Endpoint
-- [ ] Delete Project Endpoint
-- [ ] Get Project Endpoint
-- [ ] List Projects Endpoint
+- [ ] Manage sector list.
+- [ ] Manage sector detail pages.
+- [ ] Manage sector hero content.
+- [ ] Manage sector-specific services.
+- [ ] Manage sector case studies.
 
-### CMS-014 - Featured Projects
+### CMS-013 - Impact Page Content
 
-- [ ] Feature Project Endpoint
-- [ ] Unfeature Project Endpoint
-- [ ] Homepage Featured Projects Query
+- [ ] Manage impact metrics.
+- [ ] Manage transformation stories.
+- [ ] Manage customer satisfaction content.
+- [ ] Manage social impact content.
+- [ ] Manage downloadable reports.
 
-### CMS-015 - Project Galleries
+### CMS-014 - Blog / Insights Content
 
-- [ ] Upload Project Images
-- [ ] Delete Project Images
-- [ ] Project Gallery Management
+- [ ] Create blog post model.
+- [ ] Create blog category model.
+- [ ] Create blog tag model.
+- [ ] Add draft and publish workflow.
+- [ ] Add featured image support.
+- [ ] Add list, detail, create, update, and delete endpoints.
 
----
+### CMS-015 - Contact Page & Lead Capture
 
-## BLOG MANAGEMENT
+- [ ] Create contact submission endpoint.
+- [ ] Validate contact form input.
+- [ ] Save contact messages.
+- [ ] Add admin list and detail endpoints.
+- [ ] Add status values: new, contacted, qualified, closed.
+- [ ] Add mark-as-read endpoint.
 
-### CMS-016 - Blog Categories
+## Media Library
 
-- [ ] Create Category Endpoint
-- [ ] Update Category Endpoint
-- [ ] Delete Category Endpoint
-- [ ] Get Categories Endpoint
+### CMS-016 - Media Uploads
 
-### CMS-017 - Blog Posts
+- [ ] Create `media` module, controller, service, and DTO folder.
+- [ ] Add image upload endpoint.
+- [ ] Validate file type and size.
+- [ ] Store file metadata.
+- [ ] Connect media to pages, sections, blog posts, and team members.
 
-- [ ] Create Post Model
-- [ ] Create Post DTOs
-- [ ] Create Post Service
-- [ ] Create Post Controller
-- [ ] Draft Post
-- [ ] Publish Post
-- [ ] Update Post
-- [ ] Delete Post
+### CMS-017 - Media Library Management
 
-### CMS-018 - Blog Tags
+- [ ] List media files.
+- [ ] Search media files.
+- [ ] Delete media files.
+- [ ] Add pagination.
 
-- [ ] Create Tags
-- [ ] Assign Tags
-- [ ] Remove Tags
+## Navigation & Site Settings
 
----
+### CMS-018 - Header Navigation
 
-## TEAM MANAGEMENT
+- [ ] Create navigation item model.
+- [ ] Add create, update, delete, and reorder endpoints.
+- [ ] Support nested menu items if needed.
 
-### CMS-019 - Team Members
+### CMS-019 - Footer Navigation & Company Info
 
-- [ ] Create Team Member Model
-- [ ] Create Team Member Endpoint
-- [ ] Update Team Member Endpoint
-- [ ] Delete Team Member Endpoint
-- [ ] Upload Profile Image
+- [ ] Manage footer links.
+- [ ] Manage company address.
+- [ ] Manage phone and email.
+- [ ] Manage social links.
+- [ ] Manage logo and favicon.
 
-### CMS-020 - Departments
+## Dashboard & Activity
 
-- [ ] Create Department Endpoint
-- [ ] Update Department Endpoint
-- [ ] Delete Department Endpoint
+### CMS-020 - Admin Dashboard
 
----
+- [ ] Add total pages widget.
+- [ ] Add total blog posts widget.
+- [ ] Add total media files widget.
+- [ ] Add total contact messages widget.
+- [ ] Add recent activity feed.
 
-## CONTACT MANAGEMENT
+### CMS-021 - Audit Logging
 
-### CMS-021 - Contact Form API
-
-- [ ] Contact Submission Endpoint
-- [ ] Validation
-- [ ] Save Messages
-
-### CMS-022 - Contact Message Management
-
-- [ ] List Messages
-- [ ] View Message
-- [ ] Delete Message
-- [ ] Mark As Read
-
-### CMS-023 - Lead Tracking
-
-- [ ] New Status
-- [ ] Contacted Status
-- [ ] Qualified Status
-- [ ] Closed Status
+- [ ] Log content create, update, publish, unpublish, and delete actions.
+- [ ] Log login activity.
+- [ ] Log media uploads and deletes.
+- [ ] Add admin audit log list endpoint.
 
 ---
 
-## NAVIGATION MANAGEMENT
+# In Progress
 
-### CMS-024 - Header Navigation
-
-- [ ] Create Menu Item
-- [ ] Update Menu Item
-- [ ] Delete Menu Item
-- [ ] Reorder Menu Item
-
-### CMS-025 - Footer Navigation
-
-- [ ] Create Footer Link
-- [ ] Update Footer Link
-- [ ] Delete Footer Link
+<!-- Move tasks here when work starts. -->
 
 ---
 
-## SITE SETTINGS
+# Review
 
-### CMS-026 - Website Settings
+### CMS-001 - Prisma Database Models
 
-- [ ] Site Name
-- [ ] Logo
-- [ ] Favicon
-- [ ] Contact Information
-- [ ] Company Address
-
-### CMS-027 - Social Media Management
-
-- [ ] Facebook Link
-- [ ] LinkedIn Link
-- [ ] X/Twitter Link
-- [ ] Instagram Link
+- [x] Create core Prisma models for pages, sections, media, users, roles, contact messages, blog posts, and audit logs.
+- [x] Add enum values for page type, section type, publish status, contact status, and user role.
+- [x] Create the first Prisma migration.
+- [x] Regenerate Prisma Client.
 
 ---
 
-## DASHBOARD & ANALYTICS
+# Done
 
-### CMS-028 - Dashboard Statistics
+### CMS-000 - Clean Backend Starter Setup
 
-- [ ] Total Pages Widget
-- [ ] Total Projects Widget
-- [ ] Total Posts Widget
-- [ ] Total Messages Widget
-
-### CMS-029 - Recent Activity Feed
-
-- [ ] Content Updates Feed
-- [ ] Login Activity Feed
-
----
-
-## ACTIVITY LOGS
-
-### CMS-030 - Audit Logging
-
-- [ ] Content Changes Log
-- [ ] Login Activity Log
-- [ ] User Activity Log
-- [ ] Security Events Log
-
----
-
-# IN PROGRESS
-
-<!-- Move tasks here when work starts -->
-
----
-
-# REVIEW
-
-<!-- Move tasks here when PR is opened -->
-
----
-
-# DONE
-
-<!-- Move completed tasks here -->
-
-### CMS-031 - Project Setup
+- [x] Set up NestJS project structure.
+- [x] Configure pnpm as the package manager.
+- [x] Configure PostgreSQL through Docker Compose.
+- [x] Configure Prisma schema and Prisma service.
+- [x] Add health module with database readiness check.
+- [x] Add local setup documentation.
+- [x] Add coding best practices documentation.
+- [x] Add naming conventions documentation.
+- [x] Add GitHub Actions CI using pnpm.

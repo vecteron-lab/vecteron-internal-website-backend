@@ -45,8 +45,8 @@ When changing data shape:
 Recommended start-of-work flow:
 
 ```bash
-git checkout develop
-git pull
+git checkout main
+git pull origin main
 git checkout -b feature/task-name
 ```
 
