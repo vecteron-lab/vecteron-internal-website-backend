@@ -37,7 +37,7 @@ When changing data shape:
 ## Team workflow
 
 - Pull the latest changes before starting work each day.
-- Create a feature branch from the latest `main`.
+- Create a feature branch from the latest `develop`.
 - Keep pull requests focused on one feature or fix.
 - Include migration notes when the database changes.
 - Run `pnpm typecheck`, `pnpm build`, and `pnpm test` before requesting review.
@@ -45,8 +45,8 @@ When changing data shape:
 Recommended start-of-work flow:
 
 ```bash
-git checkout main
-git pull origin main
+git checkout develop
+git pull origin develop
 git checkout -b feature/task-name
 ```
 

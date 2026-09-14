@@ -65,10 +65,10 @@ Before starting work each day, pull the latest changes from the shared branch:
 
 ```bash
 git checkout develop
-git pull
+git pull origin develop
 ```
 
-Then create or update your feature branch from the latest `develop`.
+Then create or update your feature branch from the latest `main`.
 
 If the API fails with `Environment variable not found: DATABASE_URL`, copy `.env.example` to `.env` and restart the API.
 
